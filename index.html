@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism-okaidia.css">
+	<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 	<h1>OpenID Connect Discovery Endpoint</h1>
-	<pre><code id="openid-configuration" class="language-json">{ "color": "red" }</code></pre>
+	<pre><code id="openid-configuration" class="language-json"></code></pre>
+	<h2>OpenID Connect Discovery Endpoint</h2>
+	<pre><code id="jwks" class="language-json"></code></pre>
 	<script>
-		fetch('/.well-known/openid-configuration')
-		.then(res => res.json())
-		.then(cfg => {
-		  document.getElementById('openid-configuration').innerHTML = JSON.stringify(cfg, null, 4)
-		})
-		.catch(err => console.error(err))
+		Promise.all([
+			fetch('/.well-known/openid-configuration')
+			.then(res => res.json())
+			.then(cfg => {
+			  document.getElementById('openid-configuration').innerHTML = JSON.stringify(cfg, null, 4)
+			}),
+			fetch('/openid/v1/jwks')
+			.then(res => res.json())
+			.then(cfg => {
+			  document.getElementById('jwks').innerHTML = JSON.stringify(cfg, null, 4)
+			})
+		].catch(err => console.error(err))
+	
 	</script>
-	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/components/prism-json.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism-core.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
 </html>
