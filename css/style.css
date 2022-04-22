@@ -1,12 +1,21 @@
 body {
   padding: 50px;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 14px;
 }
 
 a {
   color: #00B7FF;
 }
 
-h1, h2, h3 {
+h1, h2 {
   font-weight: 300;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 18px;
 }
