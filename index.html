@@ -12,8 +12,9 @@
 	<p><a href="/openid/v1/jwks">https://oidc.koser.me/openid/v1/jwks</a></p>
 	<pre><code id="jwks" class="language-json"></code></pre>
 	<br>
+	<br>
 	<h1>Tools</h1>
-	<h2>RSA Key Generator<h2>
+	<h2>RSA Key Generator</h2>
 	How to generate an RSA private key and extract the corresponding public key is described on the following page.
 	<p><a href="https://cryptotools.net/rsagen" target="_blank">https://cryptotools.net/rsagen</a></p>
 	<h2>JWK Creator</h2>
@@ -38,6 +39,8 @@
 			})
 		]).catch(err => {
 			console.error(err)
+		}).finally(() => {
+			Prism.highlightAll()
 		})
 	</script>
 </body>
