@@ -22,8 +22,9 @@
 			.then(cfg => {
 			  document.getElementById('jwks').innerHTML = JSON.stringify(cfg, null, 4)
 			})
-		].catch(err => console.error(err))
-	
+		]).catch(err => {
+			console.error(err)
+		})
 	</script>
 	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism-core.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/plugins/autoloader/prism-autoloader.min.js"></script>
