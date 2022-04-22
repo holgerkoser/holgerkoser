@@ -5,12 +5,25 @@
 	<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-	<h1>OpenID Connect Discovery</h1>
+	<h1>OpenID Provider Metadata</h1>
 	<p><a href="/.well-known/openid-configuration">https://oidc.koser.me/.well-known/openid-configuration</a></p>
 	<pre><code id="openid-configuration" class="language-json"></code></pre>
-	<h1>JSON Web Key Set</h1>
+	<h2>JSON Web Key Set</h2>
 	<p><a href="/openid/v1/jwks">https://oidc.koser.me/openid/v1/jwks</a></p>
 	<pre><code id="jwks" class="language-json"></code></pre>
+	<br>
+	<h1>Tools</h1>
+	<h2>RSA Key Generator<h2>
+	How to generate an RSA private key and extract the corresponding public key is described on the following page.
+	<p><a href="https://cryptotools.net/rsagen" target="_blank">https://cryptotools.net/rsagen</a></p>
+	<h2>JWK Creator</h2>
+	Convert a public key into a JSON Web Key.
+	<p><a href="https://russelldavies.github.io/jwk-creator/" target="_blank">https://russelldavies.github.io/jwk-creator</a></p>
+	<h2>JWT Generator</h2>
+	JWT.IO allows you to decode, verify and generate JSON Web Tokens.
+	<p><a href="https://jwt.io/" target="_blank">https://jwt.io/</a></p>
+	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/components/prism-core.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/plugins/autoloader/prism-autoloader.min.js"></script>
 	<script>
 		Promise.all([
 			fetch('/.well-known/openid-configuration')
@@ -27,7 +40,5 @@
 			console.error(err)
 		})
 	</script>
-	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/components/prism-core.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
 </html>
