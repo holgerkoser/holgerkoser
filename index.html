@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism-okaidia.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism-okaidia.css">
 </head>
 <body>
-	<pre><code class="language-json">p { "color": "red" }</code></pre>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.min.js"></script>
+	<h1>OpenID Connect Discovery Endpoint</h1>
+	<pre><code id="openid-configuration" class="language-json">{ "color": "red" }</code></pre>
+	<script>
+		fetch('/.well-known/openid-configuration')
+		.then(res => res.json())
+		.then(cfg => {
+		  document.getElementById('openid-configuration').innerHTML = JSON.stringify(cfg, null, 4)
+		})
+		.catch(err => console.error(err))
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.min.js"></script>
 </body>
 </html>
