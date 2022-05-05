@@ -7,6 +7,14 @@
       "alg": "RS256",
       "kid": "454620d2-d7af-4762-a0d1-dfcd7cc577aa",
       "use": "sig"
+    },
+    {
+      "kty": "RSA",
+      "n": "u2mVFrqx-J1rJ2-oLMKVCuYVZt-qasp5omhyO1jgFJS73wsmh3DW7tzrDOHoyqIZedr0FbadUwgSY2C_JHt5hmIWLVtjZBVVrlVvBognos3dWK-OtmGlLWxKN-BRN16_wl1oXecC7-2EF1moTWiQPnW--hOSIX7izrgAzcONxKkWgE9o1KTh3MNIcJ_Hi9Anj6Y2RjyZiGBMJumY2h6bc6DbPd7jVYM39jAPpAVR72pYN3xShEF7evo-SxKI6C8tb1XCYs4xzPvfq5OCLbn5-ZRXwFx-2IIJGVzCZGu4hleKDhEMgktUnMFexOgn4U2lPgzOExk-t7NDsdeXj1McYw",
+      "e": "AQAB",
+      "alg": "ES256",
+      "kid": "DC5D4F33-BD93-4D1E-9F11-10A4A51345DA",
+      "use": "sig"
     }
   ]
 }
